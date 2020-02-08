@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form class="form-group"  method="post">
+    {% csrf_token %}
+    {{form.media}}
+    {{form.as_p|safe}}
+  <input type="submit" class="btn btn-success" name="" value="Submit">
+</form>
+
+{% endblock %}

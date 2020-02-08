@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form class=""  method="post">
+  {% csrf_token %}
+    <h1>Create Post!!!</h1>
+    {{form.media}}
+    {{form.as_p|safe}}
+    <button class="btn btn-primary" type="submit" name="button">Submit</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

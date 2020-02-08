@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for i in object_list %}
+      <h2 style="font-size:50px;"><b><i>{{i.post_title}}</i></b></h2>
+    <p>{{i.post_description|safe}}</p>
+    <h5><i><b>By : {{i.user.username}}</b></i></h5>
+    <br><hr><br>
+{% endfor %}
+
+
+{% endblock %}

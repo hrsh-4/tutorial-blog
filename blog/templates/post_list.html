@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <br>
+  {% for post in post_list %}
+    <i>  <h1 style ="font-size : 70px;">{{post.post_title}}</h1></i>
+    <strong style = "font-weight : 600"><i>By : {{user.username}}</i></strong>
+    <p>{{post.post_description|safe}}</p>
+    <strong style = "font-weight : 600"><i>Published at : {{post.published_date}}</i></strong>
+    <br>
+    <a class="btn btn-info " href="{% url 'blog:edit-post' pk=post.pk %}">Edit</a>&nbsp;&nbsp;&nbsp;
+    <a class="btn btn-danger" href="{% url 'blog:delete-post'  pk=post.pk %}">Delete</a>
+    <br><hr style="color:black; border:1px solid black"><br>
+
+  {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br>
+{% for post in post_list %}
+
+<h1 style="font-size:60px;font-style:italic"><b>{{post.post_title}}</b></h1>
+<h5><b><i>By : {{post.user.username}}</i></b></h5>
+<p>{{post.post_description|safe}}</p>
+<i><b>Posted on : {{post.published_date}}</b></i>
+<br><hr style="color:black;border:1px solid black"><br>
+{% endfor %}
+
+
+
+
+{% endblock %}
