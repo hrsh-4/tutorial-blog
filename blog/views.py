@@ -15,13 +15,13 @@ from django.db.models import Q
 
 @login_required
 def post_list_view(request):
-    post_list = Post.objects.filter(user = request.user, is_published = True)
+    post_list = Post.objects.filter(user = request.user, is_published = True).order_by('-published_date')
     context = {'post_list':post_list}
     return render(request,'post_list.html',context)
 
 @login_required
 def home(request):
-    post_list = Post.objects.filter(is_published=True).order_by('-published_date')
+    post_list = Post.objects.filter(is_published=True,post_type="PUB").order_by('-published_date')
     context = {'post_list':post_list}
     return render(request,'home.html',context)
     
